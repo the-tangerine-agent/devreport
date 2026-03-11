@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storefront — Project Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+        header {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            color: white;
+            padding: 48px 40px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+        }
+        header h1 { font-size: 2em; margin-bottom: 8px; }
+        header .meta { opacity: 0.8; font-size: 0.95em; }
+        header .meta span { margin-right: 24px; }
+        section { margin-bottom: 32px; }
+        h2 {
+            font-size: 1.4em;
+            color: #1e293b;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        h3 { font-size: 1.1em; color: #475569; margin-bottom: 12px; }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        .stat-card .number { font-size: 2em; font-weight: 700; color: #6366f1; }
+        .stat-card .label { color: #64748b; font-size: 0.85em; margin-top: 4px; }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .score-card {
+            background: #fee2e2;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .score-card .grade { font-size: 3em; font-weight: 800; color: #ef4444; }
+        .score-card .score-num { font-size: 1.2em; color: #64748b; margin-top: 4px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #f1f5f9; }
+        th { font-weight: 600; color: #64748b; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; }
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #6366f1;
+        }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.85em;
+            line-height: 1.5;
+        }
+        .badge {
+            background: #6366f1;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge.warn { background: #f59e0b; }
+        .todo-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.9em;
+        }
+        .todo-item code { margin-right: 8px; }
+        .todo-item.fixme code { color: #f59e0b; }
+        footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85em;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            header { padding: 32px 24px; }
+        }
+        @media print {
+            body { background: white; }
+            .card { box-shadow: none; border: 1px solid #e2e8f0; }
+            header { background: #1e1b4b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>storefront — Project Report</h1>
+            <div class="meta">
+                
+                <span>Generated: March 11, 2026</span>
+                <span>DevReport v1.0.0</span>
+            </div>
+        </header>
+
+        <section>
+            <div class="grid-4">
+                <div class="stat-card">
+                    <div class="number">1</div>
+                    <div class="label">Total Files</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">701</div>
+                    <div class="label">Lines of Code</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">1</div>
+                    <div class="label">Languages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">0</div>
+                    <div class="label">Commits</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Project Health</h2>
+            <div class="grid-2">
+                <div class="score-card">
+                    <div class="grade">F</div>
+                    <div class="score-num">10/100</div>
+                </div>
+                <div class="card">
+                    <table>
+                        <thead><tr><th>Category</th><th>Score</th><th>Status</th></tr></thead>
+                        <tbody>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> README</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Missing</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> License</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Missing</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> .gitignore</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Missing</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Tests</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Not found</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> CI/CD</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Not configured</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Comments</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">2% ratio (too low)</td>
+        </tr>
+        <tr>
+            <td><span style="color:#22c55e;font-weight:bold">✓</span> Tech debt markers</td>
+            <td style="text-align:center">10</td>
+            <td style="color:#64748b">None found</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Git history</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">No git repo</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Docker</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Not found</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Dependencies</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">No dependency files</td>
+        </tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Languages & Code</h2>
+            <div class="card">
+                <table>
+                    <thead><tr><th>Language</th><th>Files</th><th>LOC</th><th>Distribution</th><th>%</th></tr></thead>
+                    <tbody>
+        <tr>
+            <td style="font-weight:500">HTML</td>
+            <td style="text-align:right">1</td>
+            <td style="text-align:right">701</td>
+            <td style="width:40%">
+                <div style="background:#6366f120;border-radius:4px;overflow:hidden">
+                    <div style="width:100.0%;background:#6366f1;height:20px;border-radius:4px;min-width:2px"></div>
+                </div>
+            </td>
+            <td style="text-align:right;color:#64748b">100.0%</td>
+        </tr></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Largest Files</h2>
+            <div class="card">
+                <table>
+                    <thead><tr><th>File</th><th>Language</th><th>Lines</th></tr></thead>
+                    <tbody>
+            <tr>
+                <td><code>index.html</code></td>
+                <td>HTML</td>
+                <td style="text-align:right">701</td>
+            </tr></tbody>
+                </table>
+            </div>
+        </section>
+
+        
+        
+        
+
+        <section>
+            <h2>Project Structure</h2>
+            <pre>index.html</pre>
+        </section>
+
+        <footer>
+            Generated by <strong>DevReport</strong> v1.0.0 &mdash; Professional Project Reports for Developers
+        </footer>
+    </div>
+</body>
+</html>

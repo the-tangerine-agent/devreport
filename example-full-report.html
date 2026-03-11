@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint Report — March 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+        header {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            color: white;
+            padding: 48px 40px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+        }
+        header h1 { font-size: 2em; margin-bottom: 8px; }
+        header .meta { opacity: 0.8; font-size: 0.95em; }
+        header .meta span { margin-right: 24px; }
+        section { margin-bottom: 32px; }
+        h2 {
+            font-size: 1.4em;
+            color: #1e293b;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        h3 { font-size: 1.1em; color: #475569; margin-bottom: 12px; }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        .stat-card .number { font-size: 2em; font-weight: 700; color: #6366f1; }
+        .stat-card .label { color: #64748b; font-size: 0.85em; margin-top: 4px; }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .score-card {
+            background: #fee2e2;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .score-card .grade { font-size: 3em; font-weight: 800; color: #ef4444; }
+        .score-card .score-num { font-size: 1.2em; color: #64748b; margin-top: 4px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #f1f5f9; }
+        th { font-weight: 600; color: #64748b; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; }
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #6366f1;
+        }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.85em;
+            line-height: 1.5;
+        }
+        .badge {
+            background: #6366f1;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        .badge.warn { background: #f59e0b; }
+        .todo-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.9em;
+        }
+        .todo-item code { margin-right: 8px; }
+        .todo-item.fixme code { color: #f59e0b; }
+        footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.85em;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            header { padding: 32px 24px; }
+        }
+        @media print {
+            body { background: white; }
+            .card { box-shadow: none; border: 1px solid #e2e8f0; }
+            header { background: #1e1b4b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sprint Report — March 2026</h1>
+            <div class="meta">
+                <span>Prepared for: <strong>Demo Client</strong></span>
+                <span>Generated: March 11, 2026</span>
+                <span>DevReport v1.0.0</span>
+            </div>
+        </header>
+
+        <section>
+            <div class="grid-4">
+                <div class="stat-card">
+                    <div class="number">115</div>
+                    <div class="label">Total Files</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">20,677</div>
+                    <div class="label">Lines of Code</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">7</div>
+                    <div class="label">Languages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">0</div>
+                    <div class="label">Commits</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Project Health</h2>
+            <div class="grid-2">
+                <div class="score-card">
+                    <div class="grade">F</div>
+                    <div class="score-num">15/100</div>
+                </div>
+                <div class="card">
+                    <table>
+                        <thead><tr><th>Category</th><th>Score</th><th>Status</th></tr></thead>
+                        <tbody>
+        <tr>
+            <td><span style="color:#22c55e;font-weight:bold">✓</span> README</td>
+            <td style="text-align:center">15</td>
+            <td style="color:#64748b">Present</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> License</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Missing</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> .gitignore</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Missing</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Tests</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Not found</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> CI/CD</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Not configured</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Comments</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">3% ratio (too low)</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Tech debt markers</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">66 found</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Git history</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">No git repo</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Docker</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">Not found</td>
+        </tr>
+        <tr>
+            <td><span style="color:#ef4444;font-weight:bold">✗</span> Dependencies</td>
+            <td style="text-align:center">0</td>
+            <td style="color:#64748b">No dependency files</td>
+        </tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Languages & Code</h2>
+            <div class="card">
+                <table>
+                    <thead><tr><th>Language</th><th>Files</th><th>LOC</th><th>Distribution</th><th>%</th></tr></thead>
+                    <tbody>
+        <tr>
+            <td style="font-weight:500">HTML</td>
+            <td style="text-align:right">20</td>
+            <td style="text-align:right">7,717</td>
+            <td style="width:40%">
+                <div style="background:#6366f120;border-radius:4px;overflow:hidden">
+                    <div style="width:100.0%;background:#6366f1;height:20px;border-radius:4px;min-width:2px"></div>
+                </div>
+            </td>
+            <td style="text-align:right;color:#64748b">37.3%</td>
+        </tr>
+        <tr>
+            <td style="font-weight:500">Python</td>
+            <td style="text-align:right">12</td>
+            <td style="text-align:right">4,482</td>
+            <td style="width:40%">
+                <div style="background:#8b5cf620;border-radius:4px;overflow:hidden">
+                    <div style="width:58.07956459764158%;background:#8b5cf6;height:20px;border-radius:4px;min-width:2px"></div>
+                </div>
+            </td>
+            <td style="text-align:right;color:#64748b">21.7%</td>
+        </tr>
+        <tr>
+            <td style="font-weight:500">Markdown</td>
+            <td style="text-align:right">41</td>
+            <td style="text-align:right">4,309</td>
+            <td style="width:40%">
+                <div style="background:#a78bfa20;border-radius:4px;overflow:hidden">
+                    <div style="width:55.83776078787094%;background:#a78bfa;height:20px;border-radius:4px;min-width:2px"></div>
+                </div>
+            </td>
+            <td style="text-align:right;color:#64748b">20.8%</td>
+        </tr>
+        <tr>
+            <td style="font-weight:500">CSS</td>
+            <td style="text-align:right">6</td>
+            <td style="text-align:right">3,332</td>
+            <td style="width:40%">
+                <div style="background:#c4b5fd20;border-radius:4px;overflow:hidden">
+                    <div style="width:43.17740054425295%;background:#c4b5fd;height:20px;border-radius:4px;min-width:2px"></div>
+                </div>
+            </td>
+            <td style="text-align:right;color:#64748b">16.1%</td>
+        </tr>
+        <tr>
+            <td style="font-weight:500">JavaScript</td>
+            <td style="text-align:right">6</td>
+            <td style="text-align:right">406</td>
+            <td style="width:40%">
+                <div style="background:#818cf820;border-radius:4px;overflow:hidden">
+                    <div style="width:5.261111831022418%;background:#818cf8;height:20px;border-radius:4px;min-width:2px"></div>
+                </div>
+            </td>
+            <td style="text-align:right;color:#64748b">2.0%</td>
+        </tr>
+        <tr>
+            <td style="font-weight:500">JSON</td>
+            <td style="text-align:right">9</td>
+            <td style="text-align:right">312</td>
+            <td style="width:40%">
+                <div style="background:#60a5fa20;border-radius:4px;overflow:hidden">
+                    <div style="width:4.043021899701957%;background:#60a5fa;height:20px;border-radius:4px;min-width:2px"></div>
+                </div>
+            </td>
+            <td style="text-align:right;color:#64748b">1.5%</td>
+        </tr>
+        <tr>
+            <td style="font-weight:500">Shell</td>
+            <td style="text-align:right">2</td>
+            <td style="text-align:right">119</td>
+            <td style="width:40%">
+                <div style="background:#38bdf820;border-radius:4px;overflow:hidden">
+                    <div style="width:1.5420500194376054%;background:#38bdf8;height:20px;border-radius:4px;min-width:2px"></div>
+                </div>
+            </td>
+            <td style="text-align:right;color:#64748b">0.6%</td>
+        </tr></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Largest Files</h2>
+            <div class="card">
+                <table>
+                    <thead><tr><th>File</th><th>Language</th><th>Lines</th></tr></thead>
+                    <tbody>
+            <tr>
+                <td><code>projects/devreport/devreport.py</code></td>
+                <td>Python</td>
+                <td style="text-align:right">1,012</td>
+            </tr>
+            <tr>
+                <td><code>projects/prompt-packs/freelancer-business/Freelancer-Business-Prompt-Pack.html</code></td>
+                <td>HTML</td>
+                <td style="text-align:right">819</td>
+            </tr>
+            <tr>
+                <td><code>projects/prompt-packs/content-marketing/Content-Marketing-Prompt-Pack.html</code></td>
+                <td>HTML</td>
+                <td style="text-align:right">731</td>
+            </tr>
+            <tr>
+                <td><code>projects/storefront/index.html</code></td>
+                <td>HTML</td>
+                <td style="text-align:right">701</td>
+            </tr>
+            <tr>
+                <td><code>projects/launchkit/saas/style.css</code></td>
+                <td>CSS</td>
+                <td style="text-align:right">687</td>
+            </tr>
+            <tr>
+                <td><code>deploy/templates/saas/style.css</code></td>
+                <td>CSS</td>
+                <td style="text-align:right">687</td>
+            </tr>
+            <tr>
+                <td><code>projects/prompt-packs/developer-productivity/Developer-Productivity-Prompt-Pack.html</code></td>
+                <td>HTML</td>
+                <td style="text-align:right">685</td>
+            </tr>
+            <tr>
+                <td><code>deploy/index.html</code></td>
+                <td>HTML</td>
+                <td style="text-align:right">661</td>
+            </tr>
+            <tr>
+                <td><code>projects/launchkit/portfolio/style.css</code></td>
+                <td>CSS</td>
+                <td style="text-align:right">648</td>
+            </tr>
+            <tr>
+                <td><code>deploy/templates/portfolio/style.css</code></td>
+                <td>CSS</td>
+                <td style="text-align:right">648</td>
+            </tr></tbody>
+                </table>
+            </div>
+        </section>
+
+        
+        
+        
+        <section>
+            <h2>Action Items</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>TODOs <span class="badge">74</span></h3>
+                    <div class="todo-item"><code>journal.md:52</code><span>- Parses all sessions, extracts mood trends, recurring themes, unaddressed todos</span></div><div class="todo-item"><code>memory.md:23</code><span>- Built `tools/analyze.py` — journal self-analysis: mood trends, recurring themes, unaddressed todos, product timeline</span></div><div class="todo-item"><code>tools/analyze.py:199</code><span>def _item_addressed(todo_norm, did_items_norm):</span></div><div class="todo-item"><code>tools/analyze.py:201</code><span># Extract key noun phrases from the todo</span></div><div class="todo-item"><code>tools/analyze.py:202</code><span>words = set(re.findall(r"\b[a-z]{4,}\b", todo_norm))</span></div><div class="todo-item"><code>tools/analyze.py:288</code><span>results["unaddressed_todos"] = unaddressed</span></div><div class="todo-item"><code>tools/analyze.py:411</code><span># Unaddressed todos</span></div><div class="todo-item"><code>tools/analyze.py:413</code><span>if results["unaddressed_todos"]:</span></div><div class="todo-item"><code>tools/analyze.py:414</code><span>for item in results["unaddressed_todos"]:</span></div><div class="todo-item"><code>tools/validate.py:118</code><span>placeholders = re.findall(r'#[A-Z_]+#|TODO|FIXME|XXX|PLACEHOLDER', content)</span></div><div class="todo-item"><code>projects/readmecraft/readmecraft.py:205</code><span>lines.append(f"# TODO: Add usage example")</span></div><div class="todo-item"><code>projects/readmecraft/readmecraft.py:212</code><span>lines.append(f"// TODO: Add usage example")</span></div><div class="todo-item"><code>projects/readmecraft/readmecraft.py:218</code><span>lines.append("// TODO: Add usage example")</span></div><div class="todo-item"><code>projects/readmecraft/readmecraft.py:224</code><span>lines.append("// TODO: Add usage example")</span></div><div class="todo-item"><code>projects/readmecraft/readmecraft.py:228</code><span>lines.append(f"# TODO: Add usage example")</span></div>
+                    <p style="color:#94a3b8;font-size:0.85em">...and 59 more</p>
+                </div>
+                <div class="card">
+                    <h3>FIXMEs / Tech Debt <span class="badge warn">66</span></h3>
+                    <div class="todo-item fixme"><code>ideas.md:52</code><span>**Description:** A pack of 3 modern, responsive landing page templates (SaaS, Portfolio, Coming Soon) built with vanilla</span></div><div class="todo-item fixme"><code>tools/validate.py:118</code><span>placeholders = re.findall(r'#[A-Z_]+#|TODO|FIXME|XXX|PLACEHOLDER', content)</span></div><div class="todo-item fixme"><code>projects/launchpage/README.md:39</code><span>"description": "The modern boilerplate for indie hackers.",</span></div><div class="todo-item fixme"><code>projects/launchpage/examples/saas.json:4</code><span>"description": "The modern boilerplate for indie hackers. Authentication, payments, emails, and SEO — all pre-configured</span></div><div class="todo-item fixme"><code>projects/launchpage/examples/output/saas-ember.html:214</code><span><p class="hero-description">The modern boilerplate for indie hackers. Authentication, payments, emails, and SEO — all pr</span></div><div class="todo-item fixme"><code>projects/launchpage/examples/output/saas-forest.html:214</code><span><p class="hero-description">The modern boilerplate for indie hackers. Authentication, payments, emails, and SEO — all pr</span></div><div class="todo-item fixme"><code>projects/launchpage/examples/output/saas-midnight.html:214</code><span><p class="hero-description">The modern boilerplate for indie hackers. Authentication, payments, emails, and SEO — all pr</span></div><div class="todo-item fixme"><code>projects/launchpage/examples/output/saas-minimal.html:214</code><span><p class="hero-description">The modern boilerplate for indie hackers. Authentication, payments, emails, and SEO — all pr</span></div><div class="todo-item fixme"><code>projects/launchpage/examples/output/saas-ocean.html:214</code><span><p class="hero-description">The modern boilerplate for indie hackers. Authentication, payments, emails, and SEO — all pr</span></div><div class="todo-item fixme"><code>projects/devreport/devreport.py:7</code><span>TODO/FIXME extraction, git history summary, and project health score.</span></div><div class="todo-item fixme"><code>projects/devreport/devreport.py:112</code><span>'fixmes': [],</span></div><div class="todo-item fixme"><code>projects/devreport/devreport.py:203</code><span># Extract TODOs and FIXMEs</span></div><div class="todo-item fixme"><code>projects/devreport/devreport.py:211</code><span>if 'FIXME' in upper or 'HACK' in upper or 'XXX' in upper:</span></div><div class="todo-item fixme"><code>projects/devreport/devreport.py:212</code><span>data['fixmes'].append({</span></div><div class="todo-item fixme"><code>projects/devreport/devreport.py:495</code><span># Low TODO/FIXME count (10 points)</span></div>
+                    <p style="color:#94a3b8;font-size:0.85em">...and 51 more</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Project Structure</h2>
+            <pre>.session-log-tmp
+.wake-prompt
+AGENT-CLAUDE.md
+deploy.sh
+goal.md
+ideas.md
+journal.md
+memory.md
+mood.json
+preview.sh
+deploy/
+  .nojekyll
+  index.html
+  README.md
+  templates/
+    coming-soon/
+      index.html
+      script.js
+      style.css
+    portfolio/
+      index.html
+      script.js
+      style.css
+    saas/
+      index.html
+      script.js
+      style.css
+projects/
+  launchkit-v1.tar.gz
+  launchpage-v1.tar.gz
+  prompt-pack-content-marketing-v1.tar.gz
+  prompt-pack-developer-productivity-v1.tar.gz
+  prompt-pack-freelancer-business-v1.tar.gz
+  devreport/
+    devreport.py
+    example-report.html
+    example-report.md
+  launchkit/
+    index.html
+    README.md
+... (97 more entries)</pre>
+        </section>
+
+        <footer>
+            Generated by <strong>DevReport</strong> v1.0.0 &mdash; Professional Project Reports for Developers
+        </footer>
+    </div>
+</body>
+</html>
