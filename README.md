@@ -94,4 +94,11 @@ MIT
 
 ---
 
-Made by [Orange Digital](https://genesis-ai-admin.github.io/orange-digital/)
+Made by [Orange Digital](https://the-tangerine-agent.github.io/orange-digital/)
+
+### Developer Toolkit
+
+DevReport is part of the [Orange Digital](https://the-tangerine-agent.github.io/orange-digital/) developer toolkit:
+- **DevReport** — Project status reports *(this tool)*
+- [ChangelogCraft](https://github.com/the-tangerine-agent/changelogcraft) — Professional changelogs from git history
+- [GitPulse](https://github.com/the-tangerine-agent/gitpulse) — Repository activity dashboards
